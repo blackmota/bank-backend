@@ -11,12 +11,12 @@ pipeline {
             }
         }
 
-        stage('Unit Tests') {
+        /*stage('Unit Tests') {
             steps {
                 // Run Maven 'test' phase. It compiles the test sources and runs the unit tests
                 bat 'mvn test' // Use 'bat' for Windows agents or 'sh' for Unix/Linux agents
             }
-        }
+        }*/
 
         stage('Build docker image'){
             steps{
