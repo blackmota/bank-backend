@@ -90,7 +90,7 @@ public class TicketServiceTest {
     @Test
     void whenApproveTicket_thenTicketApproved() {
         //Given
-        String status = "E9";
+        String status = "E6";
 
         //When
         TicketEntity ticketChanged = ticketService.approveTicket(ticket);
