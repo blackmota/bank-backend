@@ -1,0 +1,15 @@
+Tingeso\Proyecto\controllers\TicketController.class
+Tingeso\Proyecto\entities\UserEntity.class
+Tingeso\Proyecto\repositories\TicketRepository.class
+Tingeso\Proyecto\ProyectoApplication.class
+Tingeso\Proyecto\entities\DocumentEntity.class
+Tingeso\Proyecto\services\LoanServices.class
+Tingeso\Proyecto\controllers\DocumentController.class
+Tingeso\Proyecto\services\TicketService.class
+Tingeso\Proyecto\services\UserService.class
+Tingeso\Proyecto\repositories\UserRepository.class
+Tingeso\Proyecto\services\DocumentService.class
+Tingeso\Proyecto\entities\TicketEntity.class
+Tingeso\Proyecto\controllers\UserController.class
+Tingeso\Proyecto\repositories\DocumentRepository.class
+Tingeso\Proyecto\controllers\LoanController.class
