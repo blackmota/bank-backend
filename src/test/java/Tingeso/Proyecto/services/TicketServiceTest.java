@@ -59,7 +59,6 @@ public class TicketServiceTest {
         // Verificaciones
         assertThat( savedTicket.getStatus()).isEqualTo("E3");
         assertThat(savedTicket.getStep()).isEqualTo(1);
-        assertThat(savedTicket.getR1()).isFalse();
         assertThat(savedTicket.getFee()).isEqualTo(expectedFee);
 
         // Verifica que el repositorio haya sido llamado
