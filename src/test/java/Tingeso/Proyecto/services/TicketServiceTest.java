@@ -8,10 +8,14 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 
 import java.time.LocalDate;
+import java.util.Arrays;
 import java.util.Date;
+import java.util.List;
+import java.util.Optional;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 import static org.mockito.MockitoAnnotations.openMocks;
 
@@ -319,7 +323,7 @@ public class TicketServiceTest {
     @Test
     void whenValidateR5_thenTrue4(){
         float loanAmount = 90000000f;
-        Integer loanType = 2;
+        Integer loanType = 4;
         float propertyValuation = 180000000f;
 
         //When
@@ -333,6 +337,18 @@ public class TicketServiceTest {
     void whenValidateR5_thenFalse4(){
         float loanAmount = 120000000f;
         Integer loanType = 4;
+        float propertyValuation = 180000000f;
+
+        //When
+        Boolean result = ticketService.Validate_r5(loanAmount,loanType,propertyValuation);
+
+        //Then
+        assertThat(result).isFalse();
+    }
+    @Test
+    void whenValidateR5_thenFalse5(){
+        float loanAmount = 120000000f;
+        Integer loanType = 5;
         float propertyValuation = 180000000f;
 
         //When
@@ -416,6 +432,73 @@ public class TicketServiceTest {
         assertThat(result).isEqualTo(1);
     }
 
+    @Test
+    public void testGetByIdUser() {
+
+        //Given
+        Integer idUser = 1;
+        List<TicketEntity> tickets = Arrays.asList(new TicketEntity(), new TicketEntity());
+        when(ticketRepo.getAllByUsuario(idUser)).thenReturn(tickets);
+
+        //When
+        List<TicketEntity> result = ticketService.getByIdUser(idUser);
+
+        //Then
+        assertThat(result).isNotNull()
+                .isNotEmpty()
+                .hasSize(2)
+                .isEqualTo(tickets);
+        verify(ticketRepo).getAllByUsuario(idUser);
+    }
+
+    @Test
+    public void testSave() {
+        //Given
+        TicketEntity ticket = new TicketEntity();
+        when(ticketRepo.save(ticket)).thenReturn(ticket);
+
+        //When
+        TicketEntity result = ticketService.save(ticket);
+
+        //Then
+        assertThat(result).isNotNull()
+                .isEqualTo(ticket);
+        verify(ticketRepo).save(ticket);
+    }
+
+    @Test
+    public void testGetAllByStatus() {
+        //Given
+        List<TicketEntity> tickets = Arrays.asList(new TicketEntity(), new TicketEntity());
+        when(ticketRepo.getAllByStatusNotInOrderByStepDesc(Arrays.asList("E8", "E4", "E6", "E7"))).thenReturn(tickets);
+
+        //When
+        List<TicketEntity> result = ticketService.getAllByStatus();
+
+        //Then
+        assertThat(result).isNotNull()
+                .isNotEmpty()
+                .hasSize(2)
+                .isEqualTo(tickets);
+        verify(ticketRepo).getAllByStatusNotInOrderByStepDesc(Arrays.asList("E8", "E4", "E6", "E7"));
+    }
+
+    @Test
+    public void testGetById() {
+
+        //Given
+        Long id = 1L;
+        TicketEntity ticket = new TicketEntity();
+        when(ticketRepo.findById(id)).thenReturn(Optional.of(ticket));
+
+        //When
+        TicketEntity result = ticketService.getById(id);
+
+        //Then
+        assertThat(result).isNotNull()
+                .isEqualTo(ticket);
+        verify(ticketRepo).findById(id);
+    }
 
 
 }

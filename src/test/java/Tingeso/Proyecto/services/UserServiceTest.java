@@ -9,7 +9,10 @@ import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.junit.jupiter.api.extension.ExtendWith;
 
+import java.util.Optional;
+
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
@@ -102,5 +105,21 @@ public class UserServiceTest {
 
         // Then
         assertThat(result).isNull();
+    }
+
+    @Test
+    public void testGetUser() {
+        //Given
+        Long userId = 1L;
+        UserEntity expectedUser = new UserEntity();
+        when(userRepository.findById(userId)).thenReturn(Optional.of(expectedUser));
+
+        //When
+        UserEntity result = userService.getUser(userId);
+
+        //Then
+        assertThat(result).isNotNull()
+                .isEqualTo(expectedUser);
+        verify(userRepository).findById(userId);
     }
 }
