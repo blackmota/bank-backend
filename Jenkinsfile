@@ -21,7 +21,7 @@ pipeline {
         stage('Build docker image'){
             steps{
                 script{
-                    bat 'docker build -t bank-service:latest .'
+                    bat 'docker build -t blackmota/bank-service:latest .'
                 }
             }
         }
