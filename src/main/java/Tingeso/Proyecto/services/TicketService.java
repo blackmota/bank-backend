@@ -36,13 +36,6 @@ public class TicketService {
     public TicketEntity addTicket(TicketEntity ticket) {
         ticket.setStatus("E3");
         ticket.setStep(1);
-        ticket.setR1(false);
-        ticket.setR2(false);
-        ticket.setR3(false);
-        ticket.setR4(false);
-        ticket.setR5(false);
-        ticket.setR6(false);
-        ticket.setR7(false);
         ticket.setFee(loanServices.calculateLoan(ticket.getAmount(),ticket.getInterest(),ticket.getYears()));
         return ticketRepo.save(ticket);
     }
