@@ -140,12 +140,22 @@ public class DocumentServiceTest {
         String result1 = documentService.documentType(1);
         String result2 = documentService.documentType(2);
         String result3 = documentService.documentType(3);
-        String result4 = documentService.documentType(8);
+        String result4 = documentService.documentType(4);
+        String result5 = documentService.documentType(5);
+        String result6 = documentService.documentType(6);
+        String result7 = documentService.documentType(7);
+        String result8 = documentService.documentType(8);
+        String result9 = documentService.documentType(9);
 
         // Then
         assertThat(result1).isEqualTo("Ingresos");
         assertThat(result2).isEqualTo("C_Aval");
         assertThat(result3).isEqualTo("Credit_History");
-        assertThat(result4).isEqualTo("C_Aval_Act");
+        assertThat(result4).isEqualTo("First_property");
+        assertThat(result5).isEqualTo("Finantial_status");
+        assertThat(result6).isEqualTo("bussines_plan");
+        assertThat(result7).isEqualTo("remodelation_budget");
+        assertThat(result8).isEqualTo("C_Aval_Act");
+        assertThat(result9).isNull();
     }
 }

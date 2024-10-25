@@ -64,6 +64,37 @@ public class TicketServiceTest {
 
 
     @Test
+    void whenRejectTicket_thenCorrect() {
+        //Given
+        TicketEntity ticket = new TicketEntity();
+        ticket.setStatus("E10");
+        ticket.setAmount(10);
+
+        //When
+        TicketEntity savedTicket = ticketService.rejectTicket(ticket);
+
+        //Then
+        assertThat( savedTicket.getStatus()).isEqualTo("E7");
+        assertThat(savedTicket.getStep()).isEqualTo(1);
+    }
+
+    @Test
+    void whenAccepTicketExecutive_thenCorrect() {
+        //Given
+        TicketEntity ticket = new TicketEntity();
+        ticket.setStatus("E3");
+        ticket.setStep(2);
+
+        //When
+        TicketEntity savedTicket = ticketService.acceptTicketExecutive(ticket);
+
+        //Then
+        assertThat( savedTicket.getStatus()).isEqualTo("E4");
+        assertThat(savedTicket.getStep()).isEqualTo(3);
+    }
+
+
+    @Test
     void whenCancelTicket_thenNoExceptions() {
         //Given
         String status = "E8";
