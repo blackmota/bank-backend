@@ -31,8 +31,6 @@ public class LoanControllerTest {
         float rate = 5.5f;
         float time = 10f;
         float expectedLoan = 12000f;
-
-
         when(loanServices.calculateLoan(amount, rate, time)).thenReturn(expectedLoan);
 
         // When
@@ -50,7 +48,6 @@ public class LoanControllerTest {
         float interest = 0.05f;
         float years = 5f;
         float expectedTotal = 17500f;
-
         when(loanServices.calculateTotalLoanAmount(loan, interest, years, 0.03f, 20000f, 1f)).thenReturn(expectedTotal);
 
         // When
