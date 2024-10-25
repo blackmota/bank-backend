@@ -1,5 +1,9 @@
+Tingeso\Proyecto\entities\TicketEntityTest.class
 Tingeso\Proyecto\services\UserServiceTest.class
 Tingeso\Proyecto\services\TicketServiceTest.class
-Tingeso\Proyecto\ProyectoApplicationTests.class
+Tingeso\Proyecto\controllers\DocumentControllerTest.class
+Tingeso\Proyecto\controllers\TicketControllerTest.class
+Tingeso\Proyecto\controllers\UserControllerTest.class
+Tingeso\Proyecto\controllers\LoanControllerTest.class
 Tingeso\Proyecto\services\DocumentServiceTest.class
 Tingeso\Proyecto\services\LoanServiceTest.class
