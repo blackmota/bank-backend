@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: Tingeso.Proyecto.services.TicketServiceTest
 -------------------------------------------------------------------------------
-Tests run: 32, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.095 s -- in Tingeso.Proyecto.services.TicketServiceTest
+Tests run: 32, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.079 s -- in Tingeso.Proyecto.services.TicketServiceTest

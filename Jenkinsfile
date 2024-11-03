@@ -22,7 +22,7 @@ pipeline {
         stage('Build docker image'){
             steps{
                 script{
-                    bat 'docker build -t blackmota/bank-service:latest .'
+                    bat 'docker build --no-cache -t blackmota/bank-service:latest .'
                 }
             }
         }
